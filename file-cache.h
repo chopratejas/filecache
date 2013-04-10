@@ -1,7 +1,6 @@
 //
 //
-// The problem is to implement a file cache in C that implements the defined
-// interface given below for struct 'file_cache'. The typical usage is for a
+// File cache in C. The typical usage is for a
 // client to call 'file_cache_pin_files()' to pin a bunch of files in the cache
 // and then either read or write to their in-memory contents in the cache.
 // Writing to a cache entry makes that entry 'dirty'. Before a dirty entry can
@@ -19,17 +18,7 @@
 // convenience, it is permissible (although not preferred) to substitute
 // external functions with stub implementations, but in doing so, please be
 // clear what the intended behavior and side effects would be.
-//
-// Do not be overly concerned about portability. Pick your platform of choice
-// (Nutanix develops on Linux) and be consistent.
-//
-// The problem has an upper limit of two hours. Note that we'd rather see a
-// stable and clean solution that implements a subset of the functionality than
-// a complete but-buggy one.
-//
-// If you have any questions, please email both brian@nutanix.com and
-// bnc@nutanix.com. If no reply is received in a timely manner, please make a
-// judgement call and state your assumptions in the code or response email.
+
 
 #ifndef _FILE_CACHE_H_
 #define _FILE_CACHE_H_
