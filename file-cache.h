@@ -1,5 +1,3 @@
-//
-//
 // File cache in C. The typical usage is for a
 // client to call 'file_cache_pin_files()' to pin a bunch of files in the cache
 // and then either read or write to their in-memory contents in the cache.
@@ -11,13 +9,7 @@
 // with, it should be created and filled with zeros - the size should be 10KB.
 //
 // 'file_cache' should be a thread-safe object that can be simultaneously
-// accessed by multiple threads. If you are not comfortable with concurrent
-// programming, then it may be single-threaded (see alternative in the
-// file_cache_pin_files() comment). To implement the problem in its entirety
-// may require use of third party libraries and headers. For the sake of
-// convenience, it is permissible (although not preferred) to substitute
-// external functions with stub implementations, but in doing so, please be
-// clear what the intended behavior and side effects would be.
+// accessed by multiple threads.
 
 
 #ifndef _FILE_CACHE_H_
@@ -50,12 +42,7 @@ void file_cache_destroy(file_cache *cache);
 // irresponsible client may try to pin 4 files, and then an additional 2
 // files without unpinning any, resulting in the client deadlocking. The
 // implementation *does not* have to handle this.
-//
-// If you are not comfortable with multi-threaded programming or
-// synchronization, this function may be modified to return a boolean if
-// the requested files cannot be pinned due to the cache being full. However,
-// note that entries in 'files' may already be pinned and therefore even a
-// full cache may add additional pins to files.
+
 void file_cache_pin_files(file_cache *cache,
                           const char **files,
                           int num_files);
