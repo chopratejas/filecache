@@ -5,11 +5,7 @@
 int main()
 {
   printf("Simple File Caching!\n");
-  char *file[4];
-  file[0] = "file1";
-  file[1] = "file2";
-  file[2] = "file3";
-  file[3] = "file4";
+  char *file[] = {"file1", "file2", "file3", "file4"};
 
   file_cache *cache = file_cache_construct(4);
 
